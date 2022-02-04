@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="189e7021d36b4dc0bd6dff2bad51b5ed" Name="Diagram1" ZoomLevel="61">
+        <EntityTypeShape EntityType="LaTiendaModel.ColorSet" Width="1.5" PointX="9.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTiendaModel.MarcaSet" Width="1.5" PointX="1" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTiendaModel.ProductoSet" Width="1.5" PointX="3.125" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTiendaModel.RubroSet" Width="1.5" PointX="4.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTiendaModel.StockSet" Width="1.5" PointX="7.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTiendaModel.TalleSet" Width="1.5" PointX="7.125" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="LaTiendaModel.FK_ColorStock" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTiendaModel.FK_MarcaProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTiendaModel.FK_ProductoStock" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTiendaModel.FK_RubroProducto" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTiendaModel.FK_TalleStock" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LaTiendaModel.LineaDeVenta" Width="1.5" PointX="10.625" PointY="6.875" />
+        <EntityTypeShape EntityType="LaTiendaModel.Venta" Width="1.5" PointX="7.75" PointY="8.5" />
+        <AssociationConnector Association="LaTiendaModel.StockSetLineaDeVenta" />
+        <AssociationConnector Association="LaTiendaModel.VentaLineaDeVenta" />
+        <EntityTypeShape EntityType="LaTiendaModel.Usuario" Width="1.5" PointX="4.25" PointY="8.625" />
+        <AssociationConnector Association="LaTiendaModel.UsuarioVenta" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
