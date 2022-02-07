@@ -17,25 +17,9 @@ namespace LaTienda2
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProductoSet()
         {
-            CalcularNetoGravado();
-            CalcularIva();
-            CalcularPrecioDeVenta();
             this.StockSet = new HashSet<StockSet>();
         }
-
-        public ProductoSet(int id, int codigo, string descripcion, double costo, int margenDeGanancia, int porcentajeIva)
-        {
-            Codigo = codigo;
-            Descripcion = descripcion;
-            Costo = costo;
-            MargenDeGanancia = margenDeGanancia;
-            PorcentajeIva = porcentajeIva;
-            CalcularNetoGravado();
-            CalcularIva();
-            CalcularPrecioDeVenta();
-            this.StockSet = new HashSet<StockSet>();
-        }
-
+    
         public int Id { get; set; }
         public long Codigo { get; set; }
         public string Descripcion { get; set; }
@@ -52,20 +36,5 @@ namespace LaTienda2
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StockSet> StockSet { get; set; }
         public virtual RubroSet RubroSet { get; set; }
-
-        public void CalcularNetoGravado()
-        {
-            NetoGravado = Costo + Costo * MargenDeGanancia / 100;
-        }
-
-        public void CalcularIva()
-        {
-            Iva = NetoGravado * PorcentajeIva / 100;
-        }
-
-        public void CalcularPrecioDeVenta()
-        {
-            PrecioDeVenta = NetoGravado + Iva;
-        }
     }
 }

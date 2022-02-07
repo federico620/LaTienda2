@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/04/2022 05:33:31
+-- Date Created: 02/07/2022 16:36:00
 -- Generated from EDMX file: C:\Users\Trassani\source\repos\LaTienda2\LaTienda2\LaTiendaModelo.edmx
 -- --------------------------------------------------
 
@@ -29,8 +29,17 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_RubroProducto]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ProductoSet] DROP CONSTRAINT [FK_RubroProducto];
 GO
+IF OBJECT_ID(N'[dbo].[FK_StockSetLineaDeVenta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LineaDeVentaSet] DROP CONSTRAINT [FK_StockSetLineaDeVenta];
+GO
 IF OBJECT_ID(N'[dbo].[FK_TalleStock]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[StockSet] DROP CONSTRAINT [FK_TalleStock];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UsuarioVenta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[VentaSet] DROP CONSTRAINT [FK_UsuarioVenta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_VentaLineaDeVenta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LineaDeVentaSet] DROP CONSTRAINT [FK_VentaLineaDeVenta];
 GO
 
 -- --------------------------------------------------
@@ -39,6 +48,9 @@ GO
 
 IF OBJECT_ID(N'[dbo].[ColorSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ColorSet];
+GO
+IF OBJECT_ID(N'[dbo].[LineaDeVentaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[LineaDeVentaSet];
 GO
 IF OBJECT_ID(N'[dbo].[MarcaSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[MarcaSet];
@@ -54,6 +66,12 @@ IF OBJECT_ID(N'[dbo].[StockSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[TalleSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TalleSet];
+GO
+IF OBJECT_ID(N'[dbo].[UsuarioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UsuarioSet];
+GO
+IF OBJECT_ID(N'[dbo].[VentaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[VentaSet];
 GO
 
 -- --------------------------------------------------
@@ -144,7 +162,8 @@ CREATE TABLE [dbo].[UsuarioSet] (
     [Nombre] nvarchar(max)  NOT NULL,
     [Legajo] bigint  NOT NULL,
     [UsuarioNick] nvarchar(max)  NOT NULL,
-    [Password] nvarchar(max)  NOT NULL
+    [Password] nvarchar(max)  NOT NULL,
+    [RolUsuario1] int  NOT NULL
 );
 GO
 

@@ -82,6 +82,7 @@
           <Property Name="Legajo" Type="bigint" Nullable="false" />
           <Property Name="UsuarioNick" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RolUsuario1" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="VentaSet">
           <Key>
@@ -447,15 +448,13 @@
           <Property Name="UsuarioNick" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Venta" Relationship="LaTiendaModel.UsuarioVenta" FromRole="Usuario" ToRole="Venta" />
+          <Property Name="RolUsuario1" Type="LaTiendaModel.RolEnum" Nullable="false" />
         </EntityType>
         <Association Name="UsuarioVenta">
           <End Type="LaTiendaModel.Usuario" Role="Usuario" Multiplicity="1" />
           <End Type="LaTiendaModel.Venta" Role="Venta" Multiplicity="*" />
         </Association>
-        <EnumType Name="Rol" a:ExternalTypeName="Usuario" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
-          <Member Name="Administrativo" />
-          <Member Name="Vendedor" />
-        </EnumType>
+        <EnumType Name="RolEnum" a:ExternalTypeName="LaTienda2.Enums.RolEnum" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -553,6 +552,7 @@
           <ScalarProperty Name="Legajo" ColumnName="Legajo" />
           <ScalarProperty Name="UsuarioNick" ColumnName="UsuarioNick" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RolUsuario1" ColumnName="RolUsuario1" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

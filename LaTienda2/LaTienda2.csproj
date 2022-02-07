@@ -138,6 +138,9 @@
     <Compile Include="Controllers\RubroSetsController.cs" />
     <Compile Include="Controllers\StockSetsController.cs" />
     <Compile Include="Controllers\TalleSetsController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
+    <Compile Include="Enums\RolEnum.cs" />
+    <Compile Include="Extends\ProductSet.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -271,6 +274,11 @@
     <Content Include="Views\StockSets\Details.cshtml" />
     <Content Include="Views\StockSets\Edit.cshtml" />
     <Content Include="Views\StockSets\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
